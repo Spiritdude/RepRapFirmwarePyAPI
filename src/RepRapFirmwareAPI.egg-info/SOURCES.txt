@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-src/RepRapFirmwareAPI/__init__.py
-src/RepRapFirmwareAPI.egg-info/PKG-INFO
-src/RepRapFirmwareAPI.egg-info/SOURCES.txt
-src/RepRapFirmwareAPI.egg-info/dependency_links.txt
-src/RepRapFirmwareAPI.egg-info/top_level.txt
