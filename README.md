@@ -6,7 +6,7 @@ Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP
    rrf = RepRapFirmwareAPI.RRFRestAPI("192.168.0.12")
 
    resp = rrf.gcode("M112")              # synchronous
-      Note: type(resp) is either dict containing data, or str 
+      # Note: type(resp) is either dict containing data, or str 
 
    rrf.gcode("M112",type="async")        # asynchronous
    resp = rrf.reply()
