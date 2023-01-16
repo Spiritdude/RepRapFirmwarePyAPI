@@ -44,9 +44,9 @@ Note: All methods return either `dict` or `str` as data types.
 
 `gcode(gcode="M122",type="sync",expect=None,force=False)`
 > send single G-code line
->> `type`: `"sync"` or `"async"` then use `reply()` to retrieve response
->> `expect`: string of a key you expect as part of dict reponse
->> `force`: enforce 'expect' key to be present in case of error, then it's `None`
+  - `type`: `"sync"` or `"async"` then use `reply()` to retrieve response
+  - `expect`: string of a key you expect as part of dict reponse
+  - `force`: enforce 'expect' key to be present in case of error, then it's `None`
 > examples:
 >> gcode("G28 X Y")
 >> gcode("M122")
