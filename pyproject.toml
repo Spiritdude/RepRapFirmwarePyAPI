@@ -1,0 +1,18 @@
+[project]
+name = "RepRapFirmwareAPI"
+version = "0.0.1"
+authors = [
+  { name="Rene K. Mueller", email="spiritdude@gmail.com" },
+]
+description = "A small wrapper for RepRapFirmware REST API"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Spiritdude/RepRapFirmwarePyAPI"
+"Bug Tracker" = "https://github.com/Spiritdude/RepRapFirmwarePyAPI/issues"
