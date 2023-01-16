@@ -58,7 +58,7 @@ Note: All methods return either `dict` or `str` as data types.
 > upload file, for print jobs choose "/gcodes/" as folder, e.g. `upload("test.gcode","/gcodes/test.gcode")`
 
 `print(fn)`
-> print uploaded file, e.g. print("/gcodes/test.gcode")
+> print uploaded file, e.g. `print("/gcodes/test.gcode")`
 
 `print_status()`
 > retrieve printing status
@@ -88,7 +88,7 @@ Note: All methods return either `dict` or `str` as data types.
 > retrieve low-level query of configuration
 
 `config(key=None)`
-> retrieve comprehensive configuration (takes time gather)
+> retrieve comprehensive configuration (takes time to gather)
 > if `key` is present, only a particular configuration is retrieved
 
 `status()`
