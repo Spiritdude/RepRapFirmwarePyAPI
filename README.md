@@ -1,7 +1,9 @@
 # RepRapFirmware Python API 
 Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP/RestAPI:
 ```
-   rrf = RRF("192.168.0.12")
+   import RepRapFirmwareAPI
+   
+   rrf = RepRapFirmwareAPI.RRFRestAPI("192.168.0.12")
 
    resp = rrf.gcode("M112")              # synchronous
       Note: type(resp) is either dict containing data, or str 
@@ -16,7 +18,7 @@ Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP
 
 test it with (replace IP with your actual board):
 ```
-python src/RRFRestAPI.py 192.168.0.16
+python src/RepRapFirmwareAPI/__init__.py 192.168.0.12
 ```
 it will produce a lot of output, as first `M122`, and then 
 - retrieve fulll configuration (takes a couple of seconds), and then
