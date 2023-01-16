@@ -31,10 +31,10 @@ Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP
 
 test it with (replace IP with your actual board):
 ```
-python src/RepRapFirmwareAPI/__init__.py 192.168.0.12
+python3 src/RepRapFirmwareAPI/__init__.py 192.168.0.12
 ```
 it will produce a lot of output, as first `M122`, and then 
-- retrieve fulll configuration (takes a couple of seconds), and then
+- retrieve full configuration (takes a couple of seconds), and then
 - upload a test file (`tests/test.txt`), downloads its content, and delete again, and then
 - upload `tests/test.gcode` .gcode file (single line) and starts printing it
 
