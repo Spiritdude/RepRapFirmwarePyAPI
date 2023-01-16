@@ -18,10 +18,10 @@ Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP
    
    rrf = RepRapFirmwareAPI.RRFRestAPI("192.168.0.12")
 
-   resp = rrf.gcode("M112")              # synchronous
+   resp = rrf.gcode("M122")              # synchronous
       # Note: type(resp) is either dict containing data, or str 
 
-   rrf.gcode("M112",type="async")        # asynchronous
+   rrf.gcode("M122","async")            # asynchronous
    resp = rrf.reply()
 
    rrf.upload("test.gcode","/gcodes/test.gcode")
@@ -42,17 +42,17 @@ it will produce a lot of output, as first `M122`, and then
 
 Note: All methods return either `dict` or `str` as data types.
 
-`gcode(gcode="M122",type="sync",expect=None,force=False)`
+`gcode(gcode="M122",typ="sync",expect=None,force=False)`
 > send single G-code line
-  - `type`: `"sync"` or `"async"` then use `reply()` to retrieve response
+  - `typ`: `"sync"` or `"async"` then use `reply()` to retrieve response
   - `expect`: string of a key you expect as part of dict reponse
   - `force`: enforce 'expect' key to be present in case of error, then it's `None`
 > examples:
 >> gcode("G28 X Y")
 >> gcode("M122")
 
-`reply()`
-> if `gcode("...",type="async")` was used, retrieve response separately
+`reply(typ="sync")`
+> if `gcode("...",typ="async")` was used, retrieve response separately, optionally the `reply("async")` returns non-blocking
 
 `upload(fn,dest="")`
 > upload file, for print jobs choose "/gcodes/" as folder, e.g. `upload("test.gcode","/gcodes/test.gcode")`
