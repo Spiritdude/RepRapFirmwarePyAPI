@@ -1,4 +1,17 @@
 # RepRapFirmware Python API 
+
+NOTE: THIS IS EARLY STATE OF PACKAGE - API SUBJECT OF CHANGES UNTIL 0.1.0 RELEASE
+
+## Install
+
+```
+git clone https://github.com/Spiritdude/RepRapFirmwarePyAPI
+cd RepRapFirmwarePyAPI
+pip3 install .
+```
+
+## Introduction
+
 Just a small wrapper to interact with a RepRapFirmware-based controller via HTTP/RestAPI:
 ```
    import RepRapFirmwareAPI
