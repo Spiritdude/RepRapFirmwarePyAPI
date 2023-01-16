@@ -47,22 +47,27 @@ Note: All methods return either `dict` or `str` as data types.
 >> `type`: `"sync"` or `"async"` then use `reply()` to retrieve response
 >> `expect`: string of a key you expect as part of dict reponse
 >> `force`: enforce 'expect' key to be present in case of error, then it's `None`
+> examples:
+>> gcode("G28 X Y")
+>> gcode("M122")
 
 `reply()`
 > if `gcode("...",type="async")` was used, retrieve response separately
 
 `upload(fn,dest="")`
-:upload file, for print jobs choose "/gcodes/" as folder
+> upload file, for print jobs choose "/gcodes/" as folder, e.g. `upload("test.gcode","/gcodes/test.gcode")`
 
 `print(fn)`
 > print uploaded file, e.g. print("/gcodes/test.gcode")
 
 `print_status()`
+> retrieve printing status
 
 `download(fn)`
 > download file, e.g. `download("/sys/config.g")`
 
 `delete(fn)`
+> delete file, e.g. `delete('/gcodes/test.gcode')`
 
 `filelist(dir)`
 > detailed list of files of a directory
@@ -91,5 +96,6 @@ Note: All methods return either `dict` or `str` as data types.
 
 ## Caution
 If you have the Web Console open with a browser, using this API can mix up responses to browser or this API.
+
 Best close any browser and only use this API layer to have reliable operations.
 
