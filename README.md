@@ -49,12 +49,13 @@ Note: All methods return either `dict` or `str` as data types.
   - `expect`: string of a key you expect as part of dict response
   - `force`: enforce 'expect' key to be present in case of error, then it's `None`
 > examples:
->> gcode("G28 X Y")
->> gcode("M122")
+  - `gcode("G28 X Y")`
+  - `gcode("M122")`
 
 ### reply
-`reply(typ="sync")`
-> if `gcode("...",typ="async")` was used, retrieve response separately, optionally the `reply("async")` returns non-blocking
+`reply(typ="async",timeout=60)`
+> if `gcode("...",typ="async")` was used, retrieve response separately, optionally the `reply()` returns non-blocking
+> and `reply("sync")` does enforce response, within timeout period, e.g. `reply("sync",timeout=1.0)` 
 
 ### upload
 `upload(fn,dest="")`
