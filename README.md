@@ -19,7 +19,7 @@ import RepRapFirmwareAPI
 rrf = RepRapFirmwareAPI.RRFRestAPI("192.168.0.12")
 
 resp = rrf.gcode("M122")              # synchronous
-   # Note: type(resp) is either dict containing data, or str 
+# Note: type(resp) is either dict containing data, or str 
 
 rrf.gcode("M122","async")             # asynchronous
 resp = rrf.reply()
@@ -46,7 +46,7 @@ Note: All methods return either `dict` or `str` as data types.
 `gcode(gcode="M122",typ="sync",expect=None,force=False)`
 > send single G-code line
   - `typ`: `"sync"` or `"async"` then use `reply()` to retrieve response
-  - `expect`: string of a key you expect as part of dict reponse
+  - `expect`: string of a key you expect as part of dict response
   - `force`: enforce 'expect' key to be present in case of error, then it's `None`
 > examples:
 >> gcode("G28 X Y")
@@ -111,6 +111,5 @@ Note: All methods return either `dict` or `str` as data types.
 
 ## Caution
 If you have the Web Console open with a browser, using this API can mix up responses to browser or this API.
-
-Best close any browser and only use this API layer to have reliable operations.
+Therefore best close any browser and only use this API layer to have reliable operations.
 
