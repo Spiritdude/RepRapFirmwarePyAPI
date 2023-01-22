@@ -1,6 +1,6 @@
 [project]
 name = "RepRapFirmwareAPI"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
   { name="Rene K. Mueller", email="spiritdude@gmail.com" },
 ]

@@ -17,13 +17,16 @@ LIBNAME = "RepRapFirmware Python API"
 VERSION = "0.0.3"
 
 class RRFRestAPI():
-   req = requests.Session()
-   req.verify = True
+   req = requests #.Session()
+   #req.verify = True
    def _req(self,u,type="GET",params=None,files=None):
-      if type=="POST":
-         r = self.req.post(u,data=params,files=files)
-      else:
-         r = self.req.get(u,params=params)
+      try:
+         if type=="POST":
+            r = self.req.post(u,data=params,files=files)
+         else:
+            r = self.req.get(u,params=params)
+      except Exception as e:
+         logging.error(f"request <{u}>: {e}")
       if ('content-type' in r.headers and r.headers['content-type']=="application/json") or re.search('^{',r.text):
          # -- inconsistencies: some responses like M409 are text/plain but contain JSON encoded data ...
          d = r.json()
@@ -39,7 +42,7 @@ class RRFRestAPI():
       self.url = f"http://{host}"
       self.throttle = 1/5        # -- [s] used for config(), use fraction of 1/n
       self.password = password
-      #_req(f"{self.url}/rr_connect")
+      self._req(f"{self.url}/rr_connect")
 
    def gcode(self,gcode="M122",typ="sync",expect=None,force=False):
       r = self._req(f"{self.url}/rr_gcode",params={"gcode":gcode})
