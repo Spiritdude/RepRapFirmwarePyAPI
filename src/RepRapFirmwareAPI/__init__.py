@@ -17,8 +17,8 @@ LIBNAME = "RepRapFirmware Python API"
 VERSION = "0.0.3"
 
 class RRFRestAPI():
-   req = requests #.Session()
-   #req.verify = True
+   req = requests.Session()
+   req.verify = True
    def _req(self,u,type="GET",params=None,files=None):
       try:
          if type=="POST":
